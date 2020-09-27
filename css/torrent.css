@@ -128,16 +128,32 @@ p4 {
   margin-left: 5px;
 }
 
-a {
+
+/*---------------------------------------------*/
+/* head button */
+.head {
+  color: green;
+  background: black;
+  font-family: helvetica;
+  font-size: 40px;
+  margin: 15px;
+}
+.head:hover {
+  color: red;
+  background: black;
+}
+
+/* sub button */
+.default {
   color: white;
-  text-decoration:none;
+  background: black;
+  font-family: helvetica;
+  font-size: 13px;
 }
-
-a:hover {
-  background-color: red;
-  color: black;
+.default:hover {
+  color: red;
+  background: black;
 }
-
 /*---------------------------------------------*/
 
 ul {
@@ -177,17 +193,17 @@ li a, .dropbtn {
   text-decoration: none;
   font-family: helvetica;
   font-size: 13px;
-  background-color: red;
+  background-color: blue;
 }
 
 .active a {
-  background: red;
-  color: black;
+  background: black;
+  color: white;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: blue;
-  color: white;
+  background-color: black;
+  color: blue;
 }
 
 li.dropdown {
