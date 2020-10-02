@@ -66,6 +66,14 @@ max-width: 400px; width: 90%;height: 140px; font-family:system-ui; font-size: 45
 MOVIE
 </div></div>
 
+<center>
+<div class="ex1">
+<img class="mySlides" align="middle"  width="70%" height="auto"  src="https://pmcvariety.files.wordpress.com/2020/08/euphoriacostumestn.jpg">
+<img class="mySlides" align="middle"  width="70%" height="auto"  src="https://www.indiewire.com/wp-content/uploads/2019/05/KE_204_PT_0906_8063_RT-copy.jpg">
+<img class="mySlides" align="middle"  width="70%" height="auto"  src="https://anotherimg-dazedgroup.netdna-ssl.com/3000/azure/another-prod/390/8/398285.jpg">
+<img class="mySlides" align="middle"  width="70%" height="auto"  src="https://d220hvstrn183r.cloudfront.net/attachment/70124047987026647273">
+</div>
+</center>
 
 <a href="british-cinema.html"><button class="btn head">
 BRITISH CINEMA
@@ -107,7 +115,23 @@ OTHER EURO CINEMA
    </center>
    </div>
 <!--===============================================ads=============================================-->
+<script>
+var myIndex = 0;
+carousel();
 
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 4000); // Change image every 3 seconds
+}
+</script>
+<!--===============================================================================================-->
 <script src="js/main.js"></script>
 
 </ul>

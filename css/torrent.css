@@ -55,11 +55,11 @@ h1:hover {
 }
 
 h2 {
-  color: gray;
+  color: white;
   text-align: left;
   font-family: helvetica;
-  font-size: 15px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  margin-bottom: 30px;
   margin-top: 50px;
   margin-left: 5px;
 }
@@ -84,12 +84,12 @@ h3:hover {
 }
 
 h4 {
-  color: white;
+  color: blue;
   text-align: left;
   font-family: helvetica;
-  font-size: 40px;
+  font-size: 20px;
   margin-top: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   margin-left: 5px;
 }
 
@@ -244,8 +244,12 @@ div.ex1 {
  float: left;
  max-width: 1800px;
  width: 90%;
- margin-bottom: 30px;
+ margin-bottom: 60px;
  margin-left: 20px;
+}
+
+div.ex1:hover {
+ background: red;
 }
 
 div.ex2 {
