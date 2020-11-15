@@ -1,382 +1,178 @@
-
-
-.icon-bar {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-
+* {
+    background-color: black;
+    color: white;
+    font-family: monospace;
 }
-
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 12px;
-  transition: all 0.3s ease;
-  color: black;
-  font-size: 20px;
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
-.icon-bar a:hover {
-  background-color: red;
-  color: white;
-}
-
-/*---------------------------------------------*/
-
-html, body {
-  background-color: white;
-}
-
-/* Style the content */
-.content {
-  background-color: ehite;
-  padding: 10px;
-  height: window.innerHeight;
-  width: window.innerWidth;
-  margin-left: 45px;
-  font-size: 30px;
-}
-
-h1 {
-  color: black;
-  text-align: left;
-  font-family: helvetica;
-  font-style: italic;
-  font-size: 60px;
-  margin-bottom: 8px;
-}
-
-h1:hover {
-  color: blue;
-}
-
-h2 {
-  color: gray;
-  text-align: left;
-  font-family: helvetica;
-  font-size: 15px;
-  margin-bottom: 10px;
-  margin-top: 50px;
-  margin-left: 5px;
-}
-
-h3 {
-  color: black;
-  text-align: left;
-  font-family: helvetica;
-  font-size: 20px;
-  margin-bottom: 10px;
-  margin-left: 30px;
-}
-
-h3:hover {
-  color: gray;
-  background-color: blue;
-}
-
-p {
-  color: black;
-  text-align: justify;
-  font-family: helvetica;
-  font-size: 13px;
-  margin-left: 5px;
-  margin-bottom: 8px;
-}
-
-p2 {
-  color: black;
-  text-align: left;
-  font-family: helvetica;
-  font-size: 18px;
-  margin-left: 8px;
-  margin-bottom: 8px;
-}
-
-p3  {
-    font-weight: bold;
-    color: black;
-    text-align: left;
-    font-family: system-ui;
-    font-size: 20px;
-    margin-left: 5px;
-}
-
-p4 {
-  color: black;
-  text-align: left;
-  font-family: helvetica;
-  font-size: 13px;
-  margin-left: 5px;
-}
+ 
+/*--------------------------------------------------------------
+# fonts
+--------------------------------------------------------------*/
 
 a {
-  color: black;
-  text-decoration:none;
+    color: red;
 }
 
 a:hover {
-  background-color: red;
-  color: black;
+    color: yellow;
 }
 
-/*---------------------------------------------*/
+/*--------------------------------------------------------------
+# navbar
+--------------------------------------------------------------*/
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  margin-bottom: 20px;
-  text-align: left;
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+    
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: auto;
+}
+    
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: white;
+    height: 100%;
 }
 
-ul.e {
-  color: black;
-  font-family: helvetica;
-  font-size: 12px;
-  max-width: 1000px; width: 100%;
+.well {
+  background-color: black;
 }
 
-ol {
-  color: black;
-  text-align: left;
-  font-family: helvetica;
-  font-size: 13px;
-  float:left;
-  margin-left: 50px;
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+.sidenav {
+    height: auto;
+    padding: 15px;
+}
+.row.content {height:auto;}
 }
 
-li {
-  float: left;
-  text-align: left;
+/*--------------------------------------------------------------
+# modal image
+--------------------------------------------------------------*/
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-li a, .dropbtn {
-  color: black;
-  text-align: left;
-  padding:10px;
-  text-decoration: none;
-  font-family: helvetica;
-  font-size: 13px;
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  top: 20;
 }
 
-.active a {
-  background: red;
-  color: black;
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: blue;
-  color: white;
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
 }
 
-li.dropdown {
-  display: inline-block;
-  text-align: left;
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
 }
 
-.dropdown-content {
-  display: none;
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
   position: absolute;
-  z-index: 1;
-  text-align: left;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.dropdown-content a {
+.close:hover,
+.close:focus {
+  color: #bbb;
   text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  background-color: white;
-}
-
-/*---------------------------------------------*/
-
-center {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  position: relative;
-  width: 100%;
-}
-
-div.ex1 {
- float: left;
- max-width: 1800px;
- width: 90%;
- margin-bottom: 30px;
- margin-left: 20px;
-}
-
-div.ex2 {
- float: left;
- width: 2500px;
- margin-bottom: 30px;
-}
-
-div.ex3 {
- float: left;
- width: 1280px;
- margin-bottom: 30px;
-}
-
-div.ex4 {
- float: left;
- max-width: 1800px;
- width: 100%;
- margin-right: 2%;
- margin-bottom: 30px;
-}
-
-section {
- float: left;
- margin-right: 15px;
- margin-bottom: 25px;
- font-family:system-ui;
- max-width: 380px;
- width: 95%;
- height: 540px;
- font-size: 30px;
- color: black;
-}
-
-section2 {
- float: left;
- margin-right: 15px;
- margin-bottom: 20px;
- font-family:system-ui;
- width: 300px;
- height: 170px;
- font-size: 30px;
- color: black;
-}
-
-#wrapper2 {
-  float: left;
-  width: 100%;
-  max-width: window.innerWidth;
-  height: 320px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  margin-left: 1%;
-  overflow:auto;
-}
-
-#wrapper {
-  float: left;
-  width: 98%;
-  max-width: window.innerWidth;
-  max-height: 620px;
-  height: 90%;
-  margin-bottom: 40px;
-  margin-top: 20px;
-  margin-left: 1%;
-  overflow:auto;
-}
-
-/*---------------------------------------------*/
-
-.container {
-  display: inline-block;
   cursor: pointer;
 }
 
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }
 
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
+/*--------------------------------------------------------------
+# footer
+--------------------------------------------------------------*/
 
-.change .bar2 {opacity: 0;}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-}
-
-/*---------------------------------------------*/
-
-canvas {
-  outline: 0px;
-  position: relative;
-  max-width: 100%;
-  margin-top: 30px;
-}
-
-/*---------------------------------------------*/
-
-input[type=text], select, textarea {
-  width: 100%;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  font-size: 12px;
-  border: none;
-  margin-left:15px;
-  font-family: system-ui;
-}
-
-input[type=submit] {
+    /* Set black background color, white text and some padding */
+footer {
     background-color: white;
     color: black;
-    padding: 12px 20px;
-    cursor: pointer;
-    border: none;
-}
+    padding: 15px;
+    }
 
-input[type=submit]:hover {
-  background-color: gray;
-  color: white;
-}
-
-/*---------------------------------------------*/
-
+/*--------------------------------------------------------------
+# scrollbar
+--------------------------------------------------------------*/
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px black;
-    border-radius: 5px;
+  background: black; 
 }
-
+ 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: red;
-    border-radius: 5px;
+  background: white; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: blue;
-}
-
-/*---------------------------------------------*/
-
-/* Style the footer */
-.footer {
-  background-color: white;
-  font-size: 12px;
-  font-family: helvetica;
-  color: black;
-  text-align: right;
-  margin-top: 20px;
-  margin-bottom: 25px;
-  margin-right: 10px;
+  background: red; 
 }
